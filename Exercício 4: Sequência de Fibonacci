@@ -4,18 +4,18 @@ public class SequenciaFibonacci {
         int segundo = 1;
         int contador = 0;
 
-        while (contador < 10) { // Queremos os 10 primeiros números
+        while (contador < 10) {
             System.out.print(primeiro);
 
             if (contador < 9) {
-                System.out.print(", "); // Coloca vírgula só entre os números
+                System.out.print(", ");
             }
 
-            int proximo = primeiro + segundo; // Próximo número da sequência
-            primeiro = segundo; // Atualiza o primeiro
-            segundo = proximo; // Atualiza o segundo
+            int proximo = primeiro + segundo;
+            primeiro = segundo;
+            segundo = proximo;
 
-            contador++; // Conta quantos números já imprimimos
+            contador++;
         }
     }
 }
