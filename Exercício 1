@@ -1,0 +1,10 @@
+public class NumerosDeUmACinquenta {
+    public static void main(String[] args) {
+        int numero = 1; // Começa do 1
+
+        while (numero <= 50) { // Enquanto o número for menor ou igual a 50
+            System.out.println(numero); // Imprime o número
+            numero++; // Soma 1 ao número
+        }
+    }
+}
