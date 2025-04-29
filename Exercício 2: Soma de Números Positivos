@@ -1,23 +1,23 @@
-import java.util.Scanner; // Importa o Scanner para ler o que o usuário digitar
+import java.util.Scanner;
 
 public class SomaNumerosPositivos {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Cria o scanner
+        Scanner scanner = new Scanner(System.in);
         int numero;
-        int soma = 0; // Começa a soma em zero
+        int soma = 0;
 
         System.out.println("Digite um número positivo (número negativo para sair):");
 
-        numero = scanner.nextInt(); // Lê o primeiro número
+        numero = scanner.nextInt();
 
-        while (numero >= 0) { // Enquanto o número for positivo ou zero
-            soma += numero; // Soma o número ao total
+        while (numero >= 0) {
+            soma += numero;
             System.out.println("Digite outro número positivo (número negativo para sair):");
-            numero = scanner.nextInt(); // Lê o próximo número
+            numero = scanner.nextInt();
         }
 
         System.out.println("Soma total dos números positivos: " + soma);
 
-        scanner.close(); // Fecha o scanner (boa prática!)
+        scanner.close();
     }
 }
