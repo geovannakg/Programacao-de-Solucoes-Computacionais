@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class ValidacaoSenha {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        final String SENHA_CORRETA = "1234"; // Senha fixa
+        String senhaDigitada;
+
+        System.out.println("Digite a senha:");
+
+        senhaDigitada = scanner.nextLine(); // Lê a senha digitada
+
+        while (!senhaDigitada.equals(SENHA_CORRETA)) { // Enquanto a senha estiver ERRADA
+            System.out.println("Senha incorreta, tente novamente.");
+            senhaDigitada = scanner.nextLine(); // Pede de novo
+        }
+
+        System.out.println("Acesso concedido!");
+
+        scanner.close(); // Fecha o scanner
+    }
+}
