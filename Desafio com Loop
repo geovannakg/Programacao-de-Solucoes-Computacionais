@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class CalculadoraRendimento {
+
+    // Método para calcular capitalização simples
+    public static double capitalizacaoSimples(double principal, double taxa, double tempo) {
+        return principal * (1 + (taxa / 100) * tempo);
+    }
+
+    // Método para calcular capitalização composta
+    public static double capitalizacaoComposta(double principal, double taxa, double tempo) {
+        return principal * Math.pow((1 + taxa / 100), tempo);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String continuar;
+
+        System.out.println("=== Calculadora de Rendimento Financeiro ===");
+
+        do {
+            // Solicita os dados ao usuário
+            System.out.print("Digite o valor do investimento inicial (P): ");
+            double principal = scanner.nextDouble();
+
+            System.out.print("Digite a taxa de juros anual (%): ");
+            double taxa = scanner.nextDouble();
+
+            System.out.print("Digite o período de investimento em anos (t): ");
+            double tempo = scanner.nextDouble();
+
+            System.out.print("Escolha a opção de capitalização (simples/composta): ");
+            String tipoCapitalizacao = scanner.next();
+
+            double montante;
+
+            // Verifica o tipo de capitalização escolhido
+            if (tipoCapitalizacao.equalsIgnoreCase("simples")) {
+                montante = capitalizacaoSimples(principal, taxa, tempo);
+            } else if (tipoCapitalizacao.equalsIgnoreCase("composta")) {
+                montante = capitalizacaoComposta(principal, taxa, tempo);
+            } else {
+                System.out.println("Tipo de capitalização inválido! Por favor, escolha 'simples' ou 'composta'.");
+                continue; // Volta para o início do loop
+            }
+
+            // Exibe o resultado
+            System.out.printf("\nResultado:\nValor inicial: R$ %.2f\nTaxa anual: %.2f%%\nTempo: %.1f anos\nMontante final: R$ %.2f\n",
+                    principal, taxa, tempo, montante);
+
+            // Pergunta se o usuário quer realizar um novo cálculo
+            System.out.print("\nDeseja realizar um novo cálculo? (s/n): ");
+            continuar = scanner.next();
+
+            System.out.println(); // Linha em branco para organização
+
+        } while (continuar.equalsIgnoreCase("s"));
+
+        System.out.println("Obrigado por utilizar a Calculadora de Rendimento. Até a próxima!");
+        scanner.close();
+    }
+}
